@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Editor</title>
+  <style type="text/css" media="screen">
+    body {
+        overflow: hidden;
+    }
+
+    #editor {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 700px;
+        right: 0;
+    }
+  </style>
+</head>
+<body>
+<p id = "demo">hello</p>
+<pre id="editor">
+</pre>
+
+<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = editor.getValue();
+}
+</script>
+
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/scala");
+</script>
+<button type="submit" onclick="myFunction()" >Submit</button>
+</body>
+</html>

@@ -1,0 +1,10 @@
+class Model
+{
+    def behavior():Unit={
+        println("Working")
+    }
+}
+def test():Model={
+    return new Model()
+}
+test()

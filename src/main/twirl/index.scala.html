@@ -1,0 +1,164 @@
+@(date: java.util.Date)
+@main {
+
+
+<div id="header">
+  <h2>Cogent Simulation Platform</h2>
+</div>
+
+<div id="nav">
+  <input type="file" id="fileinput" />
+  <script type="text/javascript">
+  function readSingleFile(evt) {
+    //Retrieve the first (and only!) File from the FileList object
+    var f = evt.target.files[0];
+    if (f) {
+      var r = new FileReader();
+      r.onload = function(e) {
+	      var contents = r.result;
+
+
+           //$('#aboutDescription').val(contents);
+           editor.setValue(contents);
+      }
+      r.readAsText(f);
+    } else {
+      alert("Failed to load file");
+    }
+  }
+  document.getElementById('fileinput').addEventListener('change', readSingleFile, false);
+</script>
+
+  <script type="text/javascript">
+  var myObj;
+  function myTestGetFunction() {
+  $(function()
+    {
+
+        $.get("/entities", function(data)
+        {
+                myObj = JSON.parse(data);
+                alert("Run Successful!");
+                document.getElementById("message").innerHTML = myObj.returnedValue
+        });
+    }
+   );
+  };
+</script>
+
+
+  <script type="text/javascript">
+ function myParseFunction() {
+  $(function()
+    {
+
+        $.post("/parsemodel",
+        {
+                model: editor.getValue(),
+                threshold:thresh,
+                decay:decay_value,
+                iter:iter_value
+
+        },
+        function(data, textStatus)
+        {
+               alert("Response from server: " + data);
+        });
+
+      });
+  };
+
+</script>
+
+  <button onclick="myParseFunction()" class="btn btn-success">Parse Model</button>
+  <button onclick="myTestGetFunction()" class="btn btn-info">Run Model</button>
+  <button onclick="visualize()" class="btn btn-primary">Visualize Model</button>
+</div>
+
+
+<div id="section">
+  <h6> Visualization </h6>
+  <div id="mynetwork"></div>
+
+  <script type="text/javascript">
+  function visualize(){
+  // create an array with nodes
+  var nodes = new vis.DataSet(myObj.nodes);
+
+  // create an array with edges
+  var edges = new vis.DataSet(myObj.connections);
+
+  // create a network
+  var container = document.getElementById('mynetwork');
+  var data = {
+    nodes: nodes,
+    edges: edges
+  };
+  var options = {};
+  var network = new vis.Network(container, data, options);
+  }
+  </script>
+  <script>
+  var thresh = 0.0001;
+  var decay_value = 0.05;
+  var iter_value = 400;
+  function outputUpdate(threshold) {
+	document.querySelector('#threshold').value = threshold;
+	thresh = threshold;
+   }
+   function decayUpdate(decay){
+    document.querySelector('#decay').value = decay;
+    decay_value = decay;
+   }
+   function iterUpdate(iter){
+    document.querySelector('#iter').value = iter;
+    iter_value = iter;
+   }
+   function network_detail() {
+	document.getElementById("message").innerHTML = myObj.nodeDetails;
+   }
+   function behaviors_executed() {
+	document.getElementById("message").innerHTML = myObj.returnedValue;
+   }
+  </script>
+
+  <label for="fader"><b><font size="-1">Thresh </font></b></label>
+  <input type="range" min="0" max="1" value="0.0001" id="fader" step="0.0001" oninput="outputUpdate(value)">
+  <output for="fader" id="threshold">0.0001</output>
+
+  <label for="decay_id">&nbsp;&nbsp;<b><font size="-1">Decay</font></b></label>
+  <input type="range" min="0" max="1" value="0.05" id="decay_id" step="0.001" oninput="decayUpdate(value)">
+  <output for="decay_id" id="decay">0.05</output>
+
+  <label for="iter_id">&nbsp;&nbsp;<b><font size="-1">Max Iter</font></b></label>
+  <input type="range" min="0" max="800" value="400" id="iter_id" step="1" oninput="iterUpdate(value)">
+  <output for="iter_id" id="iter">400</output>
+
+  <br/><br/>
+  <button onclick="network_detail()" class="btn btn-default">network details</button>
+  <button onclick="behaviors_executed()" class="btn btn-default">behaviors executed</button>
+</div>
+
+
+<div id="editor"></div>
+
+
+<script src="/assets/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/eclipse");
+    editor.getSession().setMode("ace/mode/scala");
+    document.getElementById("editor").style.fontSize='11px';
+</script>
+
+
+<div id="console">
+  <h5>Console</h5>
+  <br>
+  <p id="message"></p>
+</div>
+
+<div id="footer">
+</div>
+
+}
