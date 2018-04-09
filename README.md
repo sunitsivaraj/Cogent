@@ -1,9 +1,9 @@
-# Test Web App #
+# Cogent #
 
 ## Build & Run ##
 
 ```sh
-$ cd Test_Web_App
+$ cd Cogent
 $ ./sbt
 > jetty:start
 > browse
