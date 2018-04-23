@@ -4,7 +4,7 @@ import scala.collection.mutable.ListBuffer
 
 /**
   * this class is inherited by the Node and Network class
-  * the main purpose of this class is to use node and network class interchang
+  * the main purpose of this class is to use node and network class interchangeably
  *
   * @author  Sunit Sivaraj
   * @version 1.0

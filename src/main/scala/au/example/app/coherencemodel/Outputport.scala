@@ -31,7 +31,10 @@ class Outputport(portname:String, net:Network) {
     getHarmony(network)
   }
 
-  //get the harmony of the network
+  /**
+    * get the harmony of the network
+    * @return Harmony
+    */
   private def getHarmony(net:Network):Double={
     var harmony:Double = 0
     for(item <- net.network_elements){

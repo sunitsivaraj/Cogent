@@ -6,7 +6,8 @@ import edu.uci.ics.jung.graph.util.Graphs
 import scala.util.parsing.combinator.JavaTokenParsers
 
 /**
-  * Created by Levent Yilmaz on 9/21/2016.
+  * Created by Levent Yilmaz on 9/21/2016
+  * Last Modified by Sunit Sivaraj on 04/23/2018
   */
 
 
@@ -81,7 +82,7 @@ object CoherenceModel  {
 
 }
 
-
+// Defining the structure
 abstract class Node
 case class CogModel(netspec: Network, portMappings:Option[List[Mapping]], behaviorMappings:Option[List[BMapping]])
 case class Network(name: String, portlist: Option[List[Port]],portmapper: Option[Map[Port, Node]],evidences: List[Evidence], beliefs: List[Belief], hypotheses: List[Hypothesis], goals: List[Goal], actions: List[Action], coherenceConstraints: List[Constraint], analogies:List[Analogy],subNets: Option[List[Network]])
@@ -98,6 +99,7 @@ case class Mapping(outNet: String, outPort: String, inpNet: String, inpPort: Str
 case class BMapping(NetName: String, NodeName: String, BehName: String)
 
 
+// Defining the grammar
 class CoherenceNet extends JavaTokenParsers {
   def cogentspec: Parser[Cogent] = "cogent"~>ident~dataspec~bspec~cmspec ^^
     {case name~data~behavior~cm => Cogent(name.toString(),data,behavior,cm)}
@@ -208,6 +210,7 @@ object NetExpr extends CoherenceNet {
       port_mapping = parseAll(cmspec, inp).get.portMappings.head
       behave_mapping = parseAll(cmspec, inp).get.behaviorMappings.head
     }
+      // if the cognitive specification is invalid
     else {println("invalid input")
       result = "Unsuccessfull parsing, Invalid Input"
     }

@@ -134,6 +134,7 @@ class Network extends CompositeNetwork{
   /**
     * This method sets up data priority for Explanatory coherence
     * This function passes its control to all its child nodes
+    * @param special This is the special node with a higher activity
     * @return Nothing
     */
   def establishDataPriority(special: Node): Unit = {

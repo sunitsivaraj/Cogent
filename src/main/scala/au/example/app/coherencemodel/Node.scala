@@ -266,7 +266,8 @@ class Node(act:Double ,id: String) extends CompositeNetwork{
 
   /**
     * This method is used to check if a node is a child of another node
-    * @return Nothing
+    * @param id name of the node
+    * @return Int
     */
   private def checkNode(id:String):Int={
     for(c <- connectedNodes){
@@ -278,6 +279,7 @@ class Node(act:Double ,id: String) extends CompositeNetwork{
 
   /**
     * This method is used establish data priority in explanatory coherence
+    * @param special This is the special node with higher priority
     * @return Nothing
     */
   def establishDataPriority(special: Node): Unit = {
