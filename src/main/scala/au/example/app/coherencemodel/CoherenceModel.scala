@@ -200,14 +200,12 @@ class CoherenceModel(root:Network, threshold:Double, decay:Double, max_iter:Int)
   def Analogy(hypList:ListBuffer[Node], eviList:ListBuffer[Node], Weight:Double):Unit={
     var linkWeight:Double = Weight/hypList.length
     //connect all nodes
-    println("length", hypList.length)
     for(i <- 0 until hypList.length){
         var e1 = new NodeEdge(hypList(i),linkWeight)
         var e2 = new NodeEdge(eviList(i),linkWeight)
         hypList(i).addConnection(e2)
         eviList(i).addConnection(e1)
       }
-    println("Analogy set up successfully")
   }
 
   private def establishDataPriority():Unit={

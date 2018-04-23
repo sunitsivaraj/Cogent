@@ -204,8 +204,6 @@ object NetExpr extends CoherenceNet {
     result = "Successful parsing, Valid Input"
     if ((parseAll(cmspec, inp).successful) == true) {
 
-      //println("get: " + parseAll(cmspec, inp).get)
-      println(parseAll(cmspec,inp))
       myNet  = parseAll(cmspec, inp).get.asInstanceOf[CogModel].netspec
       port_mapping = parseAll(cmspec, inp).get.portMappings.head
       behave_mapping = parseAll(cmspec, inp).get.behaviorMappings.head

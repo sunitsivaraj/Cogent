@@ -24,14 +24,12 @@ class  IAC_Runner(root:Network) {
       root.update()
       var check:Int = root.notSettled()
       if(check == 0){
-        root.printNode()
+        //root.printNode()
         networkSettled = true
-        println("Cycle Count: ",cycle_count)
       }
       cycle_count += 1
       if(cycle_count > parameters.max_iter){
         networkSettled = true
-        println("Cycle Count: ",cycle_count)
       }
     }
   }

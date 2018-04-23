@@ -30,30 +30,15 @@ class MyScalatraServlet extends TestWebAppStack  {
     decay = params("decay").toDouble
     max_iter = params("iter").toInt
 
-    println("Threshold: "+threshold.toString())
-    println("Decay: "+decay.toString())
-    println("Max Iter: "+max_iter.toString())
-
     var inpNet = modelSrc.toString()
 
     dataVariable  = inpNet.split("@data").lift(1).get.
       split("@behavior").lift(0).get
 
-    println(dataVariable)
-
-
     behavior = inpNet.split("@behavior").lift(1).get.
       split("@cognitiveModel").lift(0).get
 
-    println(behavior)
-
     val actions = behavior.split("def")
-
-    println("Actions are....")
-    for (i <- actions) {
-      //println(i)
-    }
-
 
     val cm :String  = "@cognitiveModel"+
       inpNet.split("@cognitiveModel").lift(1).get
@@ -72,14 +57,13 @@ class MyScalatraServlet extends TestWebAppStack  {
     //-----------------------------PARSING THE HIERARCHICAL NETWORK NODES-----------------------------------------------
     // A recursive function that parses the input and adds network recursively
     def NetworkParser(myNetwork:Network):coherencemodel.Network ={
-      println("The name of the network added is " + myNetwork.name)
+      //println("The name of the network added is " + myNetwork.name)
 
       //currently one network in model but will be expanded later
       var Net = new coherencemodel.Network(myNetwork.name)
 
       //get the evidence nodes
       for (myElem <- myNetwork.evidences) {
-        println("My data is " + myElem.name + " with activation " + myElem.defaultActivation)
         var node = new coherencemodel.Node(myElem.defaultActivation, myElem.name)
         node.dataNode = true
         Net.add(node)
@@ -87,7 +71,6 @@ class MyScalatraServlet extends TestWebAppStack  {
 
       //get the hypothesis nodes
       for (myElem <- myNetwork.hypotheses) {
-        println("My hypothesis is " + myElem.name + " with activation " + myElem.defaultActivation)
         var node = new coherencemodel.Node(myElem.defaultActivation, myElem.name)
         node.hypNode = true
         Net.add(node)
@@ -98,7 +81,6 @@ class MyScalatraServlet extends TestWebAppStack  {
         var node = new coherencemodel.Node(myElem.defaultActivation, myElem.name)
         Net.add(node)
         node.beliefNode = true
-        println("My belief is " + myElem.name + " with activation " + myElem.defaultActivation)
       }
 
       //get the goal nodes
@@ -106,12 +88,10 @@ class MyScalatraServlet extends TestWebAppStack  {
         var node = new coherencemodel.Node(myElem.defaultActivation, myElem.name)
         Net.add(node)
         node.goalNode = true
-        println("My goal is " + myElem.name + " with activation " + myElem.defaultActivation)
       }
 
       //get the action nodes
       for (myElem <- myNetwork.actions) {
-        println("My action is " + myElem.name + " with activation " + myElem.defaultActivation)
         var node = new coherencemodel.Node(myElem.defaultActivation, myElem.name)
         node.actionNode = true
         Net.add(node)
@@ -144,8 +124,6 @@ class MyScalatraServlet extends TestWebAppStack  {
 
       // Handling Constraints - Positive and Negative between nodes
       for (myElem <- myNetwork.coherenceConstraints) {
-        println("My constraint is " + myElem.source + " " + myElem.ctype + " " + myElem.target + " at " + myElem.strength)
-
         // Handling Positive Constraints
         if (myElem.ctype == "explains" | myElem.ctype == "deduces" | myElem.ctype == "facilitates" | myElem.ctype == "triggers") {
           var target = cohNet.getNode(myElem.target, Net)
@@ -177,28 +155,22 @@ class MyScalatraServlet extends TestWebAppStack  {
 
       // Handling Analogical Constraints
       for(analogy <- myNetwork.analogies){
-        println(myNetwork.analogies)
         var hyp_list:ListBuffer[coherencemodel.Node] = new ListBuffer[coherencemodel.Node]()
         var evi_list:ListBuffer[coherencemodel.Node] = new ListBuffer[coherencemodel.Node]()
 
         // adding hypothesis
         for(hyp <- analogy.hyp_list){
-          println("Hyp name", hyp)
           var myNode:coherencemodel.Node = cohNet.getNode(hyp, Net)
-          println(myNode.ID)
           hyp_list += myNode
         }
 
         // adding hypothesis
         for(evi <- analogy.evi_list){
-          println("Evi name", evi)
           var myNode:coherencemodel.Node = cohNet.getNode(evi, Net)
-          println(myNode.ID)
           evi_list += myNode
         }
 
         cohNet.Analogy(hyp_list, evi_list, analogy.strength)
-        println("working here")
       }
 
       // Handling Hierarchy in Network(s)
@@ -221,7 +193,6 @@ class MyScalatraServlet extends TestWebAppStack  {
       myNetwork.portlist match {
         case Some(s) => {
           for (myElem <- s) {
-            println("My port is " + myElem.name + " with type " + myElem.ptype)
             if (myElem.ptype == "in"){
               cohNet.addInputPort(myElem.name, Net)
             }
@@ -237,11 +208,9 @@ class MyScalatraServlet extends TestWebAppStack  {
         case Some(s) => {
           for (myElem <- s) {
             if (myElem._2.isInstanceOf[Evidence]) {
-              println("My port " + myElem._1.name + " is connected to " + myElem._2.asInstanceOf[Evidence].name)
               cohNet.addPortReference(myElem._1.name, myElem._2.asInstanceOf[Evidence].name, Net)
             }
             else {
-              println("My port " + myElem._1.name + " is connected to " + myElem._2.asInstanceOf[Hypothesis].name)
               cohNet.addPortReference(myElem._1.name, myElem._2.asInstanceOf[Hypothesis].name, Net)
             }
           }
@@ -311,10 +280,8 @@ class MyScalatraServlet extends TestWebAppStack  {
     var print_all = "def print_all():String={return print_data}\n"
     var return_evidences:String = "def return_evidence():ListBuffer[Tuple2[String,String]]={return evidence_changes}\n"
     var return_all:String = "def return_all():Tuple2[String, ListBuffer[Tuple2[String,String]]]={return Tuple2(print_data, evidence_changes)}\n"
-    println(imports+evidence_changes+print_data+display+print_all+dataVariable+behavior+activated_behavior+"print_all();")
     var returnedValue:Tuple2[String, ListBuffer[Tuple2[String,String]]] = Eval(imports+evidence_changes+print_data+add_change+display+print_all+return_evidences+return_all+dataVariable+
       behavior+activated_behavior+"return_all()")
-    println(returnedValue)
 
     //Extract print data out of returnedValue
     var console_display:String = returnedValue._1

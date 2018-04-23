@@ -261,7 +261,6 @@ class Node(act:Double ,id: String) extends CompositeNetwork{
     setupCompetitionHypothesis()
     setupCompetitionBeliefs()
     setupCompetitionActions()
-    println("Competition set up for node", ID)
   }
 
   /**
