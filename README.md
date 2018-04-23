@@ -1,5 +1,9 @@
 # Cogent #
 
+## Installing the sbt and scalatra ##
+download sbt from [sbt download](https://www.scala-sbt.org/download.html)
+sbt version used is 0.13.15
+
 ## Build & Run ##
 
 ```sh
