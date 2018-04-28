@@ -12,7 +12,7 @@ java version used for project is 1.8.0_144 <br/>
 download sbt from [sbt download](https://www.scala-sbt.org/download.html) <br/>
 sbt version used for project is 0.13.15 <br/>
 
-## Installing IntelliJ IDEA##
+## Installing IntelliJ IDEA ##
 IntelliJ IDEA IDE was used in developing the application, algthough other IDE can be used for development.
 The IDE can be downloaded from [IntelliJ download] (https://www.jetbrains.com/idea/download/)
 

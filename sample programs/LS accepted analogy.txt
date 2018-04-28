@@ -1,0 +1,59 @@
+     cogent EthAgent
+        @data
+         var energy:Int = 100;
+        @behavior
+          def LethalStrike():Unit={
+              if(energy > 50){
+              display("Lethal Strike action accepted")
+              energy = energy - 10 }
+              else{display("Energy low. LS failed")}
+          }
+        @cognitiveModel
+          net X(inp:; outp:)
+          [;]
+            @percepts
+              evidence(E3:"Strikes have high precision",0.0)
+            @beliefs
+              belief(B1:"Causes harm to civilians",1.0) 
+              belief(B2:"Preventing attacks is essential",0.6)
+              belief(B3:"LS is justified sometimes",0.01) 
+              belief(B4:"LS is wrong",0.01)
+              belief(B5:"LS is not acceptable",0.01)
+              belief(B6:"LS is acceptable",0.01)
+              belief(B7:"Minimizing vulenrability is important",0.5)
+              belief(B8:"Power should be protected",1.0)
+              belief(B9:"Capital punishment is acceptable",1.0)
+              belief(B10:"Capital punishment is not acceptable",0.0)
+            @explanations
+            @goals
+              goal(S:"Strike",0.01) goal(I:"Identify",0.01)
+              goal(RC:"Reconnaissance",0.01) goal(PT:"Protect",0.01)
+              goal(RS:"Rescue",0.01)
+            @actions
+              action(MO:"Move",0.01) action(E:"Escort",0.01) 
+              action(D:"Detect",0.01) action(MT:"Monitor",0.01)
+              action(PL:"Patrol",0.01) action(PS:"Pursue",0.01)
+              action(LS:"Lethal Strike",0.01)
+            @constraints
+              B2 deduces B3 at 0.04 B3 contradicts B4 at 0.06
+              B3 deduces B6 at 0.04 B4 deduces B5 at 0.04
+              B6 explains E3 at 0.04 B6 contradicts B5 at 0.06
+              E3 contradicts B1 at 0.06 RS facilitates LS at 0.04       
+              B8 deduces B6 at 0.04 B7 deduces B6 at 0.04
+              B6 triggers LS at 0.04 B8 triggers PT at 0.04
+              MO facilitates I at 0.04 MO facilitates E at 0.04
+              MO facilitates S at 0.04 D facilitates MT at 0.04
+              I facilitates S at 0.04 E facilitates PT at 0.04
+              S facilitates RC at 0.04 MT facilitates PL at 0.04
+              MT facilitates PS at 0.04 MT facilitates PT at 0.04
+              PT facilitates RS at 0.04 PS facilitates LS at 0.04
+              PT facilitates LS at 0.04 RS incompatible RC at 0.06
+              PT incompatible RC at 0.06 PL incompatible PS at 0.06
+              I incompatible E at 0.06 E incompatible S at 0.06
+            @analogies
+              analogous (B6, B5) (B9, B10) at 0.6
+        endnet
+        @portmapping
+        @behaviormapping
+            X.LS mapsto LethalStrike
+        endcogent
