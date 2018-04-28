@@ -27,3 +27,10 @@ sbt
 ```
 
 Cogent can accessed by opening the following link [http://localhost:8080/](http://localhost:8080/) in a web browser.
+
+## Sample Programs ##
+Sample programs can be accessed from the sample programs folder of the project.
+
+LS accepted analogy - the DSL for simulating the scenario where the Lethal Strike action is accepted.
+
+LS rejected analogy - the DSL for simulating the scenario where the Lethal Strike action is rejected.
