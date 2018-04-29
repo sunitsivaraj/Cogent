@@ -76,9 +76,9 @@ Step 5 (Analyzing Results):
 
 Special Note:
 * Adjust the parameters "Thresh", "Decay", and "Max Iter" based on preference.<br/>
-* Thresh - threshold of the coherence network.<br/>
-* Decay  - Decay parameter of the coherence network.<br/>
-* Max Iter - Maximum number of iterations, the network can run.<br/>
+* *Thresh* - threshold of the coherence network.<br/>
+* *Decay*  - Decay parameter of the coherence network.<br/>
+* *Max Iter* - Maximum number of iterations, the network can run.<br/>
 * Modify the DSL and the parameters until satisfactory results are obtained, thus developing the model in an iterative top down approach.<br/>
 
 ## Closing the platform ##
