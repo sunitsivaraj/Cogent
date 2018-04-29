@@ -35,7 +35,8 @@ LS accepted analogy - the DSL for simulating the scenario where the Lethal Strik
 LS rejected analogy - the DSL for simulating the scenario where the Lethal Strike action is rejected. <br/>
 
 ## Procedure for running the simulation ##
-Step 1: Specify the DSL in the code editor section or upload an existing DSL using the Choose File button. <br/>
+Step 1: 
+* Specify the DSL in the code editor section or upload an existing DSL using the Choose File button. <br/>
 <br/>
 Step 2: Parse Model" button must be pressed, if the cognitive model has any syntax error, then a message "Unsuccessful Parsing, Invalid Input" appears.<br/>
         If the cognitive model does not contain any syntax errors, then the message "Successful Parsing, Valid Input" appears.<br/>
