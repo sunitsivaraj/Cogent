@@ -48,7 +48,7 @@ Step 2 (Parsing):
 <br/>
 
 Step 3 (Running Model): 
-* **Run Model** button must be pressed, in case of a successful run, we ge the message "Run Successful!"<br/>
+* **Run Model** button must be pressed, in case of a successful run, we ge the message "Run Successful!".<br/>
 * At the moment, we cannot detect run time errors, common run time error causes include connecting two nodes that are not declared, and errors in scala code.<br/>
 * Modify Input or correct the DSL specification until a successful run.<br/>
 
@@ -70,7 +70,7 @@ Special Note:
 * Thresh - threshold of the coherence network.<br/>
 * Decay  - Decay parameter of the coherence network.<br/>
 * Max Iter - Maximum number of iterations, the network can run.<br/>
-* Modify the DSL and the parameters until satisfactory results are obtained, thus developing the model in a iterative top down approach.<br/>
+* Modify the DSL and the parameters until satisfactory results are obtained, thus developing the model in an iterative top down approach.<br/>
 
 ## Closing the platform ##
 The console section where we initially start the web application must be closed, this can be done as follows<br/>
