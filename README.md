@@ -39,9 +39,9 @@ Cogent can be accessed by opening the following link [http://localhost:8080/](ht
 ## Sample Programs ##
 Sample programs can be accessed from the sample programs folder of the project.
 
-LS accepted analogy - the DSL for simulating the scenario where the Lethal Strike action is accepted. <br/>
+*LS accepted analogy* - the DSL for simulating the scenario where the Lethal Strike action is accepted. <br/>
 
-LS rejected analogy - the DSL for simulating the scenario where the Lethal Strike action is rejected. <br/>
+*LS rejected analogy* - the DSL for simulating the scenario where the Lethal Strike action is rejected. <br/>
 
 ## Procedure for running the simulation ##
 Step 1 (DSL Specification): 
@@ -69,13 +69,13 @@ Step 4 (Network Visualization):
 <br/>
 
 Step 5 (Analyzing Results):
-* Any messages printed using the "display" function in the behavior section of the DSL can be seen in the **behaviors executed** section of the console.<br/>
+* Any messages printed using the *display* function in the behavior section of the DSL can be seen in the **behaviors executed** section of the console.<br/>
 * The **network details** section of the console gives the various details of the model.<br/>
 
 <br/>
 
 Special Note:
-* Adjust the parameters "Thresh", "Decay", and "Max Iter" based on preference.<br/>
+* Adjust the parameters *Thresh*, *Decay*, and *Max Iter* based on preference.<br/>
 * *Thresh* - threshold of the coherence network.<br/>
 * *Decay*  - Decay parameter of the coherence network.<br/>
 * *Max Iter* - Maximum number of iterations, the network can run.<br/>
