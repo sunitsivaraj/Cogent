@@ -34,7 +34,9 @@ sbt
 > jetty:start
 > browse
 ```
-Cogent can be accessed by opening the following link [http://localhost:8080/](http://localhost:8080/) in a web browser.
+Cogent can be accessed by opening the following link [http://localhost:8080/](http://localhost:8080/) in a web browser. <br/>
+
+*Note*: sbt would probably take a longer time in the very first build of the project, as it would check and install necessary libraries for the project.
 
 ## Sample Programs ##
 Sample programs (*Lethal Strike problem*) can be accessed from the *sample programs* folder of the project.<br/>
