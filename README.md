@@ -36,7 +36,7 @@ LS rejected analogy - the DSL for simulating the scenario where the Lethal Strik
 
 ## Procedure for running the simulation ##
 Step 1 (Specification): 
-* Specify the DSL in the code editor section or upload an existing DSL using the Choose File button. <br/>
+* Specify the DSL in the code editor section or upload an existing DSL using the **Choose File** button. <br/>
 
 <br/>
 
@@ -60,8 +60,8 @@ Step 4 (Visualizing):
 <br/>
 
 Step 5 (Analyzing results):
-* Any messages printed using the "display" function in the behavior section of the DSL can be seen in the "behaviors executed" section of the console.<br/>
-* The "network details" section of the console gives the various details of the model.<br/>
+* Any messages printed using the "display" function in the behavior section of the DSL can be seen in the **behaviors executed** section of the console.<br/>
+* The **network details** section of the console gives the various details of the model.<br/>
 
 <br/>
 
