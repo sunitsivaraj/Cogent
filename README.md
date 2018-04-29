@@ -1,6 +1,6 @@
 # Cogent #
 
-Cogent is a web framework for simulating of cognitive agents.
+Cogent is a web framework for simulating cognitive agents.
 
 ## Installing Java, sbt, and Scalatra ##
 Cogent is designed using the Scalatra micro web framework [Scalatra](http://scalatra.org/) <br/>
