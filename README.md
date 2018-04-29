@@ -1,6 +1,6 @@
 # Cogent #
 
-Cogent is a web framework for simulation of cognitive agents.
+Cogent is a web framework for simulating of cognitive agents.
 
 ## Installing Java, sbt, and Scalatra ##
 Cogent is designed using the Scalatra micro web framework [Scalatra](http://scalatra.org/) <br/>
@@ -13,8 +13,8 @@ download sbt from [sbt download](https://www.scala-sbt.org/download.html) <br/>
 sbt version used for project is 0.13.15 <br/>
 
 ## Installing IntelliJ IDEA ##
-IntelliJ IDEA IDE was used in developing the application, algthough other IDE can be used for development.
-The IDE can be downloaded from [IntelliJ download] (https://www.jetbrains.com/idea/download/)
+IntelliJ IDEA IDE was used in developing the application, although other IDE can be used for development.
+The IDE can be downloaded from [IntelliJ download](https://www.jetbrains.com/idea/download/)
 
 ## Building & Running Cogent ##
 To run Cogent, use the following commands (windows command prompt)
@@ -25,7 +25,7 @@ sbt
 > jetty:start
 > browse
 ```
-Cogent can accessed by opening the following link [http://localhost:8080/](http://localhost:8080/) in a web browser.
+Cogent can be accessed by opening the following link [http://localhost:8080/](http://localhost:8080/) in a web browser.
 
 ## Sample Programs ##
 Sample programs can be accessed from the sample programs folder of the project.
@@ -37,13 +37,13 @@ LS rejected analogy - the DSL for simulating the scenario where the Lethal Strik
 ## Procedure for running the simulation ##
 Step 1: Specify the DSL in the code editor section or upload an existing DSL using the Choose File button. <br/>
 <br/>
-Step 2: "Parse Model" button must be pressed, if the cognitive model has any syntax error, then a message "Unsuccessful Parsing, Invalid Input" appears.<br/>
-        If the cognitive model does not contain any syntax errors, then the message "Successful Parsing, Valid Input" appears.<br/>
-		Modify Input or correct the DSL specification until a successful parsing.<br/>
+Step 2: * "Parse Model" button must be pressed, if the cognitive model has any syntax error, then a message "Unsuccessful Parsing, Invalid Input" appears.<br/>
+        * If the cognitive model does not contain any syntax errors, then the message "Successful Parsing, Valid Input" appears.<br/>
+		* Modify Input or correct the DSL specification until a successful parsing.<br/>
 <br/>
-Step 3: "Run Model" button must be pressed, in case of a successful run, we ge the message "Run Successful!"<br/>
-        At the moment, we cannot detect run time errors, common run time error causes include connecting two nodes that are not declared, and errors in scala code.<br/>
-		Modify Input or correct the DSL specification until a successful run.<br/>
+Step 3: * "Run Model" button must be pressed, in case of a successful run, we ge the message "Run Successful!"<br/>
+        * At the moment, we cannot detect run time errors, common run time error causes include connecting two nodes that are not declared, and errors in scala code.<br/>
+		* Modify Input or correct the DSL specification until a successful run.<br/>
 <br/>
 Step 4: The model is visualized by pressing the "Visualize Model" button.<br/>
 <br/>
