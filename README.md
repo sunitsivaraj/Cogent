@@ -13,7 +13,7 @@ sbt can be installed from [sbt download](https://www.scala-sbt.org/download.html
 sbt version used for project is 0.13.15 <br/>
 
 ## Installing IntelliJ IDEA ##
-IntelliJ IDEA IDE was used in developing the application, although other IDE can be used for development.
+IntelliJ IDEA IDE was used in developing the application, although other IDE can also be used for development.<br/>
 The IDE can be downloaded from [IntelliJ download](https://www.jetbrains.com/idea/download/)
 
 ## Downloading Cogent ##
