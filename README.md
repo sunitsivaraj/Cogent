@@ -41,21 +41,21 @@ Step 1 (Specification):
 <br/>
 
 Step 2 (Parsing):
-* Parse Model" button must be pressed, if the cognitive model has any syntax error, then a message "Unsuccessful Parsing, Invalid Input" appears.<br/>
+* **Parse Model** button must be pressed, if the cognitive model has any syntax error, then a message "Unsuccessful Parsing, Invalid Input" appears.<br/>
 * If the cognitive model does not contain any syntax errors, then the message "Successful Parsing, Valid Input" appears.<br/>
 * Modify Input or correct the DSL specification until a successful parsing.<br/>
 
 <br/>
 
 Step 3 (Running Model): 
-* "Run Model" button must be pressed, in case of a successful run, we ge the message "Run Successful!"<br/>
+* **Run Model** button must be pressed, in case of a successful run, we ge the message "Run Successful!"<br/>
 * At the moment, we cannot detect run time errors, common run time error causes include connecting two nodes that are not declared, and errors in scala code.<br/>
 * Modify Input or correct the DSL specification until a successful run.<br/>
 
 <br/>
 
 Step 4 (Visualizing):
-* The model is visualized by pressing the "Visualize Model" button.<br/>
+* The model is visualized by pressing the **Visualize Model** button.<br/>
 
 <br/>
 
