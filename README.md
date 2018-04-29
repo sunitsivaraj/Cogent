@@ -6,8 +6,8 @@ Cogent is a web framework for simulating of cognitive agents.
 Cogent is designed using the Scalatra micro web framework [Scalatra](http://scalatra.org/) <br/>
 Scalatra will need Java and sbt to be installed <br/>
 
-java can be installed from [Java download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) <br/>
-java version used for project is 1.8.0_144 <br/>
+Java can be installed from [Java download](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) <br/>
+Java version used for project is 1.8.0_144 <br/>
 
 sbt can be installed from [sbt download](https://www.scala-sbt.org/download.html) <br/>
 sbt version used for project is 0.13.15 <br/>
@@ -19,7 +19,7 @@ The IDE can be downloaded from [IntelliJ download](https://www.jetbrains.com/ide
 ## Downloading Cogent ##
 Cogent can be downloaded to a local machine using the Clone or the download option in github. <br/>
 
-or using the following command in command line interface <br/>
+or using the following command in command line interface (windows git Bash)<br/>
 
 ```sh
 git clone https://github.com/szs0144/Cogent.git master
