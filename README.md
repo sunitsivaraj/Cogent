@@ -44,37 +44,37 @@ Sample programs can be accessed from the sample programs folder of the project.
 *LS rejected analogy* - the DSL for simulating the scenario where the Lethal Strike action is rejected. <br/>
 
 ## Procedure for running the simulation ##
-Step 1 (DSL Specification): 
+*Step 1 (DSL Specification)*: 
 * Specify the DSL in the code editor section or upload an existing DSL using the **Choose File** button. <br/>
 
 <br/>
 
-Step 2 (DSL Parsing):
+*Step 2 (DSL Parsing)*:
 * **Parse Model** button must be pressed, if the cognitive model has any syntax error, then a message "Unsuccessful Parsing, Invalid Input" appears.<br/>
 * If the cognitive model does not contain any syntax errors, then the message "Successful Parsing, Valid Input" appears.<br/>
 * Modify Input or correct the DSL specification until a successful parsing.<br/>
 
 <br/>
 
-Step 3 (Running Model): 
+*Step 3 (Running Model)*: 
 * **Run Model** button must be pressed, in case of a successful run, we ge the message "Run Successful!".<br/>
 * At the moment, we cannot detect run time errors, common run time error causes include connecting two nodes that are not declared, and errors in scala code.<br/>
 * Modify Input or correct the DSL specification until a successful run.<br/>
 
 <br/>
 
-Step 4 (Network Visualization):
+*Step 4 (Network Visualization)*:
 * The model is visualized by pressing the **Visualize Model** button.<br/>
 
 <br/>
 
-Step 5 (Analyzing Results):
+*Step 5 (Analyzing Results)*:
 * Any messages printed using the *display* function in the behavior section of the DSL can be seen in the **behaviors executed** section of the console.<br/>
 * The **network details** section of the console gives the various details of the model.<br/>
 
 <br/>
 
-Special Note:
+*Special Note*:
 * Adjust the parameters *Thresh*, *Decay*, and *Max Iter* based on preference.<br/>
 * *Thresh* - threshold of the coherence network.<br/>
 * *Decay*  - Decay parameter of the coherence network.<br/>
