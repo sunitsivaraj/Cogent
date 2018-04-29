@@ -79,8 +79,8 @@ Sample programs (*Lethal Strike problem*) can be accessed from the *sample progr
 *Special Note*:
 * Parameters such as *Thresh*, *Decay*, and *Max Iter* can be adjusted based on the user's preference.<br/>
 * *Thresh* - threshold of the coherence network.<br/>
-* *Decay*  - Decay parameter of the coherence network.<br/>
-* *Max Iter* - Maximum number of iterations, the network can run.<br/>
+* *Decay*  - decay parameter of the coherence network.<br/>
+* *Max Iter* - maximum number of iterations, the network is allowed to run.<br/>
 * The DSL and the parameters can be modified until satisfactory results are obtained, thus developing a cognitive model in an iterative top down fashion.<br/>
 
 ## Closing the platform ##
