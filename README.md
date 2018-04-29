@@ -35,27 +35,42 @@ LS accepted analogy - the DSL for simulating the scenario where the Lethal Strik
 LS rejected analogy - the DSL for simulating the scenario where the Lethal Strike action is rejected. <br/>
 
 ## Procedure for running the simulation ##
-Step 1: 
+Step 1 (Specification): 
 * Specify the DSL in the code editor section or upload an existing DSL using the Choose File button. <br/>
+
 <br/>
-Step 2: Parse Model" button must be pressed, if the cognitive model has any syntax error, then a message "Unsuccessful Parsing, Invalid Input" appears.<br/>
-        If the cognitive model does not contain any syntax errors, then the message "Successful Parsing, Valid Input" appears.<br/>
-		Modify Input or correct the DSL specification until a successful parsing.<br/>
+
+Step 2 (Parsing):
+* Parse Model" button must be pressed, if the cognitive model has any syntax error, then a message "Unsuccessful Parsing, Invalid Input" appears.<br/>
+* If the cognitive model does not contain any syntax errors, then the message "Successful Parsing, Valid Input" appears.<br/>
+* Modify Input or correct the DSL specification until a successful parsing.<br/>
+
 <br/>
-Step 3: "Run Model" button must be pressed, in case of a successful run, we ge the message "Run Successful!"<br/>
-        At the moment, we cannot detect run time errors, common run time error causes include connecting two nodes that are not declared, and errors in scala code.<br/>
-		Modify Input or correct the DSL specification until a successful run.<br/>
+
+Step 3 (Running Model): 
+* "Run Model" button must be pressed, in case of a successful run, we ge the message "Run Successful!"<br/>
+* At the moment, we cannot detect run time errors, common run time error causes include connecting two nodes that are not declared, and errors in scala code.<br/>
+* Modify Input or correct the DSL specification until a successful run.<br/>
+
 <br/>
-Step 4: The model is visualized by pressing the "Visualize Model" button.<br/>
+
+Step 4 (Visualizing):
+* The model is visualized by pressing the "Visualize Model" button.<br/>
+
 <br/>
-Step 5: Any messages printed using the "display" function in the behavior section of the DSL can be seen in the "behaviors executed" section of the console.<br/>
-        The "network details" section of the console gives the various details of the model.<br/>
+
+Step 5 (Analyzing results):
+* Any messages printed using the "display" function in the behavior section of the DSL can be seen in the "behaviors executed" section of the console.<br/>
+* The "network details" section of the console gives the various details of the model.<br/>
+
 <br/>
-Note:   Adjust the parameters "Thresh", "Decay", and "Max Iter" based on preference.<br/>
-        Thresh - threshold of the coherence network.<br/>
-		Decay  - Decay parameter of the coherence network.<br/>
-		Max Iter - Maximum number of iterations, the network can run.<br/>
-		Modify the DSL and the parameters until satisfactory results are obtained, thus developing the model in a iterative top down approach.<br/>
+
+Special Note:
+* Adjust the parameters "Thresh", "Decay", and "Max Iter" based on preference.<br/>
+* Thresh - threshold of the coherence network.<br/>
+* Decay  - Decay parameter of the coherence network.<br/>
+* Max Iter - Maximum number of iterations, the network can run.<br/>
+* Modify the DSL and the parameters until satisfactory results are obtained, thus developing the model in a iterative top down approach.<br/>
 
 ## Closing the platform ##
 The console section where we initially start the web application must be closed, this can be done as follows<br/>
